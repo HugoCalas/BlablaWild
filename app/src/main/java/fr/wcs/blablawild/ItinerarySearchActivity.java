@@ -33,8 +33,6 @@ public class ItinerarySearchActivity extends AppCompatActivity {
                 String condition2 = destination.getText().toString();
 
 
-
-
                 if (condition1.equals("") || condition2.equals("")) {
 
 
