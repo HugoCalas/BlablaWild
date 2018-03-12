@@ -52,7 +52,7 @@ public class VehicleActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
 
-                            String brandcar = marque.getText().toString();
+                            String brandcar  = marque.getText().toString();
                             String modelcar = modele.getText().toString();
 
                             String kilom = km.getText().toString();
@@ -80,7 +80,7 @@ public class VehicleActivity extends AppCompatActivity {
                             String brandboat = marque.getText().toString();
                             String modelboat = modele.getText().toString();
 
-                            String hrs = km.getText().toString();
+                            String hrs = heures.getText().toString();
                             int hours = Integer.parseInt(hrs);
 
                             VehicleBoat boatDescription = new VehicleBoat(brandboat, modelboat, hours);
