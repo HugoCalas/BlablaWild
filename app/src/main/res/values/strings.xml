@@ -7,4 +7,17 @@
     <string name="departure">Departure</string>
     <string name="search">SEARCH</string>
     <string name="search_an_itinerary">SEARCH AN ITINERARY</string>
+
+
+    <string-array name="vehicle_list">
+
+        <item>Please select…</item>
+        <item>Car</item>
+        <item>Boat</item>
+        <item>PLane</item>
+
+    </string-array>
+
+
+
 </resources>

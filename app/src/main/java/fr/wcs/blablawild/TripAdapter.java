@@ -11,11 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 /**
- * Created by wilder on 06/03/18.
- */
-
-
-
+ * Created by wilder on 06/03/18. */
 
 
 public class TripAdapter extends ArrayAdapter<TripModel> {
