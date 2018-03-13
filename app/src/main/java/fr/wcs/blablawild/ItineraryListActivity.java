@@ -48,9 +48,8 @@ public class ItineraryListActivity extends AppCompatActivity {
 
             Toast.makeText(ItineraryListActivity.this, intentSearchModel.getDate(), Toast.LENGTH_SHORT).show();
 
+
         //Intent pour modifier la toolbar
-
-
         String depart2 = intentSearchModel.getDeparture();
         String desti2 = intentSearchModel.getDestination();
 
