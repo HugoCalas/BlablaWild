@@ -22,13 +22,7 @@ public class ItineraryListActivity extends AppCompatActivity {
 
 
 
-        //Intent pour modifier la toolbar
-        Intent intent2 = getIntent();
 
-        String depart2 = intent2.getStringExtra("depart");
-        String desti2 = intent2.getStringExtra("desti");
-
-        this.setTitle(depart2+" >> "+desti2);
 
         //Tableau à insérer dans la listview avec adapter
             ListView listTrip = findViewById(R.id.list_trip);
@@ -54,7 +48,13 @@ public class ItineraryListActivity extends AppCompatActivity {
 
             Toast.makeText(ItineraryListActivity.this, intentSearchModel.getDate(), Toast.LENGTH_SHORT).show();
 
+        //Intent pour modifier la toolbar
 
+
+        String depart2 = intentSearchModel.getDeparture();
+        String desti2 = intentSearchModel.getDestination();
+
+        this.setTitle(depart2+" >> "+desti2);
 
     }
 

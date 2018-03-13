@@ -33,12 +33,12 @@ public class ItinerarySearchActivity extends AppCompatActivity {
                 EditText destination = findViewById(R.id.editText_desti);
                 EditText date = findViewById(R.id.etDate);
 
-                String condition1 = departure.getText().toString();
-                String condition2 = destination.getText().toString();
+                String depart2 = departure.getText().toString();
+                String desti2 = destination.getText().toString();
                 String getdate = date.getText().toString();
 
 
-                if (condition1.equals("") || condition2.equals("")) {
+                if (depart2.equals("") || desti2.equals("")) {
 
 
                     Toast.makeText(ItinerarySearchActivity.this, "Please fill your departure and destination", Toast.LENGTH_SHORT).show();
@@ -47,7 +47,7 @@ public class ItinerarySearchActivity extends AppCompatActivity {
                 else {
 
                     Intent intentSearchModel = new Intent(ItinerarySearchActivity.this, ItineraryListActivity.class);
-                    intentSearchModel.putExtra("fiche", new SearchModel(condition1, condition2, getdate));
+                    intentSearchModel.putExtra("fiche", new SearchModel(depart2, desti2, getdate));
 
                     startActivity(intentSearchModel);
                 }
