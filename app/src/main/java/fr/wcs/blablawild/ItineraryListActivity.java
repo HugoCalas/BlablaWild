@@ -1,9 +1,11 @@
 package fr.wcs.blablawild;
 
 import android.content.Intent;
+import android.os.Parcel;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -19,20 +21,16 @@ public class ItineraryListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_itinerary_list);
 
 
-        String depart = "departure";
-        String desti = "destination";
 
-
+        //Intent pour modifier la toolbar
         Intent intent2 = getIntent();
 
-        String depart2 = intent2.getStringExtra(depart);
-        String desti2 = intent2.getStringExtra(desti);
+        String depart2 = intent2.getStringExtra("depart");
+        String desti2 = intent2.getStringExtra("desti");
 
         this.setTitle(depart2+" >> "+desti2);
 
-
-            // [...]
-
+        //Tableau à insérer dans la listview avec adapter
             ListView listTrip = findViewById(R.id.list_trip);
             ArrayList<TripModel> results = new ArrayList<>();
 
@@ -49,8 +47,16 @@ public class ItineraryListActivity extends AppCompatActivity {
             TripAdapter adapter = new TripAdapter(this, results);
             listTrip.setAdapter(adapter);
 
-            // [...]
-        }
+
+            //Intent pour afficher la date
+            SearchModel intentSearchModel = getIntent().getExtras().getParcelable("fiche");
+
+
+            Toast.makeText(ItineraryListActivity.this, intentSearchModel.getDate(), Toast.LENGTH_SHORT).show();
+
+
+
+    }
 
 
     }

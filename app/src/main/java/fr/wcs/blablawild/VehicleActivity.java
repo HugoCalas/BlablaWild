@@ -46,6 +46,7 @@ public class VehicleActivity extends AppCompatActivity {
                     heures.setVisibility(View.GONE);
                     km.setVisibility(View.VISIBLE);
                     vit.setVisibility(View.GONE);
+
                     send.setEnabled(true);
 
                     send.setOnClickListener(new View.OnClickListener() {
@@ -54,8 +55,8 @@ public class VehicleActivity extends AppCompatActivity {
 
                             String brandcar  = marque.getText().toString();
                             String modelcar = modele.getText().toString();
-
                             String kilom = km.getText().toString();
+
                             int kilometer = Integer.parseInt(kilom);
 
                             VehicleCar carDescription = new VehicleCar(brandcar, modelcar, kilometer);

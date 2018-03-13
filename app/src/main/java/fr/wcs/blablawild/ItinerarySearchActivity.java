@@ -1,12 +1,15 @@
 package fr.wcs.blablawild;
 
 import android.content.Intent;
+import android.os.Parcel;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.Date;
 
 public class ItinerarySearchActivity extends AppCompatActivity {
 
@@ -28,9 +31,11 @@ public class ItinerarySearchActivity extends AppCompatActivity {
 
                 EditText departure = findViewById(R.id.editText_depart);
                 EditText destination = findViewById(R.id.editText_desti);
+                EditText date = findViewById(R.id.etDate);
 
                 String condition1 = departure.getText().toString();
                 String condition2 = destination.getText().toString();
+                String getdate = date.getText().toString();
 
 
                 if (condition1.equals("") || condition2.equals("")) {
@@ -41,10 +46,10 @@ public class ItinerarySearchActivity extends AppCompatActivity {
                 }
                 else {
 
-                    Intent intent2 = new Intent(ItinerarySearchActivity.this, ItineraryListActivity.class);
-                    intent2.putExtra(depart, departure.getText().toString());
-                    intent2.putExtra(desti, destination.getText().toString());
-                    startActivity(intent2);
+                    Intent intentSearchModel = new Intent(ItinerarySearchActivity.this, ItineraryListActivity.class);
+                    intentSearchModel.putExtra("fiche", new SearchModel(condition1, condition2, getdate));
+
+                    startActivity(intentSearchModel);
                 }
 
             }
